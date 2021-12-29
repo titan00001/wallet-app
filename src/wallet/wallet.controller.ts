@@ -31,4 +31,9 @@ export class WalletController {
   async getWalletDetails(@Param('id') userId: string) {
     return await this.walletService.getWallet(userId);
   }
+
+  @Get('/:id/transactions')
+  async getWalletTransactions(@Param('id') userId: string) {
+    return await this.walletService.getAllTransactions(userId);
+  }
 }
